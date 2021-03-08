@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+:root {
+  --bg-color-1: #1b1d20;
+  --bg-color-2: #0e1013;
+  --active-color-1: #8e3ff2;
+  --active-color-2: #70f500;
+}
+
+html,
+body {
+  height: 100vh;
+  background: var(--bg-color-1);
+}

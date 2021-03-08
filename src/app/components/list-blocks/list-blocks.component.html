@@ -1,0 +1,10 @@
+<section
+  [ngClass]="{'active-block': animationListBlock}">
+  <div
+    *ngFor="let listCardsBlock of listCardsBlocks"
+    [ngClass]="{'active': listCardsBlock.active}"
+    class="block-card"
+    (click)="addBlockGrid(listCardsBlock)">
+    {{listCardsBlock.label}}
+  </div>
+</section>
