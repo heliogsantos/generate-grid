@@ -20,8 +20,32 @@ export class ListBlocksComponent {
   activeBlock = (props: ListCardsBlocks) => props.active = !props.active;
   
   addBlockGrid = (props: ListCardsBlocks) => {
+    if(this.listCardsBlocks.length === 1) {
+      return;
+    }
     this.activeBlock(props);
     this.animationListBlock = true;
     setTimeout(this.disabledAnimationListBlock, 100);
+  }
+
+  removeBlockList = (props: ListCardsBlocks) => {
+    props.removeBlockView = true;
+    setTimeout(() => {
+      this.listCardsBlocks = this.listCardsBlocks.filter((block: ListCardsBlocks) => {
+        return block.index !== props.index;
+      });
+    }, 400);
+  }
+
+  addBlockList = () => {
+    const amountCardsBlocks = this.listCardsBlocks.length + 1;
+
+    this.listCardsBlocks.push(
+      {
+        active: true,
+        removeBlockView: false,
+        index: amountCardsBlocks,
+      },
+    )
   }
 }

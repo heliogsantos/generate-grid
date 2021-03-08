@@ -1,10 +1,20 @@
-<section
-  [ngClass]="{'active-block': animationListBlock}">
-  <div
-    *ngFor="let listCardsBlock of listCardsBlocks"
-    [ngClass]="{'active': listCardsBlock.active}"
-    class="block-card"
-    (click)="addBlockGrid(listCardsBlock)">
-    {{listCardsBlock.label}}
+<section class="title-generate-grid">
+  <h1>Gere suas colunas</h1>
+</section>
+<section class="list-blocks" [ngClass]="{'active-block': animationListBlock}">
+  <div *ngFor="let listCardsBlock of listCardsBlocks" [ngClass]="{'active': listCardsBlock.active, 'remove-block': listCardsBlock.removeBlockView}" class="block-card" (click)="addBlockGrid(listCardsBlock)">
+    <img (click)="removeBlockList(listCardsBlock)" *ngIf="!listCardsBlock.active && listCardsBlocks.length > 1" src="../../../assets/trash.svg" alt="remover bloco">
+
+    <img *ngIf="listCardsBlock.active && listCardsBlocks.length > 1" src="../../../assets/clicker.svg" alt="remover bloco">
+  </div>
+</section>
+<section class="add-block">
+  <div class="amount-blocks">
+    <p>numeros de colunas <strong>{{listCardsBlocks.length}}</strong></p>
+  </div>
+
+  <div>
+    <button>GERAR GRID</button>
+    <button (click)="addBlockList()" [ngClass]="{'disabled': listCardsBlocks.length === 12}" ng-disabled="listCardsBlocks.length === 12">ADICIONAR</button>
   </div>
 </section>
