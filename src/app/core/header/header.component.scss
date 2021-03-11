@@ -1,34 +1,8 @@
 header {
   width: 100%;
   background: var(--bg-color-2);
-  padding: 20px 50px;
+  padding: 20px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 1;
-
-  p {
-    color: #ffffff;
-    font-weight: 300;
-    font-size: 15px;
-    position: relative;
-
-    &::after, &::before {
-      content: '/>';
-      font-size: 16px;
-      font-weight: 600;
-      position: absolute;
-      color: var(--active-color-2);
-      top: 1px;
-      margin-left: 3px;
-    }
-
-    &::before {
-      content: '<';
-      font-size: 18px;
-      top: -1.8px;
-      margin-left: -12px;
-    }
-  }
 }

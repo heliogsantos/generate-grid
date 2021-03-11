@@ -1,4 +1,5 @@
 export interface ListCardsBlocks {
   active: boolean;
-  label: number;
+  removeBlockView: boolean;
+  index: number;
 }
