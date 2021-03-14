@@ -5,7 +5,7 @@
   padding: 30px;
 
   h1 {
-    color: #ffffff;
+    color: var(--color-text);
     font-weight: 300;
     font-size: 15px;
     position: relative;
@@ -134,7 +134,7 @@
 
   .amount-blocks {
     p {
-      color: #ffffff;
+      color: var(--color-text);
       font-size: 14px;
 
       strong {
@@ -147,7 +147,7 @@
 
   button {
     border-style: none;
-    color: var(--bg-color-1);
+    color: var(--bg-color-2);
     font-weight: 600;
     padding: 10px 30px;
     cursor: pointer;

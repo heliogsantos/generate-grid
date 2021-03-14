@@ -31,35 +31,5 @@ export const listCardsBlocks: ListCardsBlocks[] = [
     active: true,
     removeBlockView: false,
     index: 6,
-  },
-  {
-    active: true,
-    removeBlockView: false,
-    index: 7,
-  },
-  {
-    active: true,
-    removeBlockView: false,
-    index: 8,
-  },
-  {
-    active: true,
-    removeBlockView: false,
-    index: 9,
-  },
-  {
-    active: true,
-    removeBlockView: false,
-    index: 10,
-  },
-  {
-    active: true,
-    removeBlockView: false,
-    index: 11,
-  },
-  {
-    active: true,
-    removeBlockView: false,
-    index: 12,
-  },
+  }
 ];
