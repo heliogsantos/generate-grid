@@ -8,27 +8,35 @@ import { Component, DoCheck } from '@angular/core';
 export class HeaderComponent implements DoCheck {
 
   darkMode: boolean;
-  lightColors = {
-    bgColor1: '#1b1d20',
-    bgColor2: '#0e1013',
-    textColor: '#ffffff'
+
+  colors = {
+    ligth: '#1b1d20',
+    dark: '#0e1013',
+    white: '#ffffff'
   }
 
-  insertColor = (target: string, color: string) => {
-   return document.querySelector('html').style.setProperty(target, color);
+  variablesRootCss = {
+    bgColor1: '--bg-color-1',
+    bgColor2: '--bg-color-2',
+    colorText: '--color-text',
   }
+
+  insertColor = (target: string, color: string) => document.querySelector('html').style.setProperty(target, color);
 
   constructor() { }
   
   ngDoCheck() {
+    const { bgColor1, bgColor2, colorText } = this.variablesRootCss;
+    const { ligth, dark, white } = this.colors;
+
     if(this.darkMode) {
-      this.insertColor('--bg-color-1', '#ffffff');
-      this.insertColor('--bg-color-2', '#1b1d20');
-      this.insertColor('--color-text', '#1b1d20');
+      this.insertColor(bgColor1, white);
+      this.insertColor(bgColor2, ligth);
+      this.insertColor(colorText, dark);
     } else {
-      this.insertColor('--bg-color-1', this.lightColors.bgColor1);
-      this.insertColor('--bg-color-2', this.lightColors.bgColor2);
-      this.insertColor('--color-text', this.lightColors.textColor);
+      this.insertColor(bgColor1, dark);
+      this.insertColor(bgColor2, dark);
+      this.insertColor(colorText, white);
     }
   }
 }
